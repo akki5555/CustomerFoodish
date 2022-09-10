@@ -1,0 +1,114 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title></ion-title>
+	</ion-toolbar>
+	<div class="search_box d-flex">
+		<ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+		<ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_box' | translate}}" readonly="true"></ion-searchbar>
+	</div>
+	<p>(eg. piza, xyz restro etc.)</p>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+	<ion-card class="order-scroll">
+		<h2 class="d-flex animate__animated animate__slideInUp">
+			{{"order_text" | translate}}
+			<span class="end">
+				{{"view_all" | translate}}
+			</span>
+		</h2>
+		<div class="order-container">
+			<div class="scroll_container" style="height: 145px; white-space: nowrap;">
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f9.png" class="crop_img">
+					</div>
+					<h4>Fast Food</h4>
+					<p>88 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f7.png" class="crop_img">
+					</div>
+					<h4>South Indian</h4>
+					<p>56 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f3.png" class="crop_img">
+					</div>
+					<h4>Chiness</h4>
+					<p>49 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f4.png" class="crop_img">
+					</div>
+					<h4>Indian Food</h4>
+					<p>68 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f5.png" class="crop_img">
+					</div>
+					<h4>Italian Food</h4>
+					<p>88 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f9.png" class="crop_img">
+					</div>
+					<h4>Fast Food</h4>
+					<p>88 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f3.png" class="crop_img">
+					</div>
+					<h4>South Indian</h4>
+					<p>56 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f3.png" class="crop_img">
+					</div>
+					<h4>Chiness</h4>
+					<p>49 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f8.png" class="crop_img">
+					</div>
+					<h4>Indian Food</h4>
+					<p>68 Restaurants</p>
+				</div>
+				<div class="order-item animate__animated animate__slideInUp">
+					<div class="img-box center_img">
+						<img src="assets/imgs/f5.png" class="crop_img">
+					</div>
+					<h4>Italian Food</h4>
+					<p>88 Restaurants</p>
+				</div>
+			</div>
+		</div>
+	</ion-card>
+
+
+	<div class="recent_location d-flex animate__animated animate__slideInUp">
+		<ion-icon class="zmdi zmdi-time-restore ion-text-start"></ion-icon>
+		<div class="text">
+			<h2 class="d-flex animate__animated animate__slideInUp"> {{"recent_searches" | translate}}</h2>
+			<h3 class="animate__animated animate__slideInUp">Mexican Pizza</h3>
+			<h3 class="animate__animated animate__slideInUp">Veg Meal</h3>
+			<h3 class="animate__animated animate__slideInUp">Indian Curry</h3>
+		</div>
+	</div>
+</ion-content>
+
+<ion-footer class="d-flex ion-no-border animate__animated animate__slideInUp" (click)="bookmark()">
+	<ion-icon class="zmdi zmdi-bookmark ion-text-start"></ion-icon>
+	<h2 class="d-flex">{{"view_bookmarked_resto" | translate}}</h2>
+</ion-footer>

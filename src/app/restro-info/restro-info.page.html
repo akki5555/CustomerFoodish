@@ -1,0 +1,959 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar [class.show-background]="showToolbar">
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <h3 class="end">
+                    <span [ngClass]="favorite_icon ? 'favorite_icon active' : 'favorite_icon'" (click)="toggleSaveIcon1()">
+						<ion-icon class="zmdi zmdi-bookmark-outline"></ion-icon>
+						<ion-icon class="zmdi zmdi-bookmark"></ion-icon>
+					</span>
+
+                    <span class="cart_icon" (click)="cart()">
+						<ion-icon class="zmdi zmdi-shopping-cart ion-text-start"></ion-icon>
+						<ion-badge>1</ion-badge>
+					</span>
+                </h3>
+
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen [scrollEvents]="true" (ionScroll)="onScroll($event)">
+    <div class="banner" *ngIf="restaurantData">
+        <div class="banner_img center_img">
+            <img src="assets/imgs/{{restaurantData.image}}" class="crop_img">
+        </div>
+        <div class="details">
+            <h2 class="animate__animated_no animate__slideInUp_no">{{restaurantData.name}}</h2>
+            <h3 class="d-flex animate__animated_no animate__slideInUp_no">{{restaurantData.description}}
+                <span class="end">
+					<ion-badge class="">{{restaurantData.rating}}</ion-badge>
+					&nbsp;&nbsp;
+					1145 rated
+				</span>
+            </h3>
+
+            <ion-row class="animate__animated_no animate__slideInUp_no">
+                <ion-col class="animate__animated_no animate__slideInUp_no" size="5">
+                    <h4>30-45 min</h4>
+                    <h3>{{'avg_dlvr_time' | translate}}</h3>
+                </ion-col>
+                <ion-col class="animate__animated_no animate__slideInUp_no" size="3">
+                    <h4>{{restaurantData.min_Amount}}</h4>
+                    <h3>{{'min_order' | translate}}</h3>
+                </ion-col>
+                <ion-col class="animate__animated_no animate__slideInUp_no" size="4">
+                    <h4>{{restaurantData.payment_method}}</h4>
+                    <h3>{{'payment_method' | translate}}</h3>
+                </ion-col>
+            </ion-row>
+        </div>
+
+        <ion-segment mode="md" (ionChange)="segmentChanged()" [(ngModel)]="segment" lines="none">
+            <ion-segment-button value="0" mode="md">
+                <ion-label>
+                    {{"cuisine" | translate}}
+                </ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="1" mode="md">
+                <ion-label>
+                    {{"reviews" | translate}}
+                </ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="2" mode="md">
+                <ion-label>
+                    {{"info" | translate}}
+                </ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div class="tab_container">
+        <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+            <ion-slide>
+                <ion-list lines="none" class="cuisine">
+                    <ion-item class="animate__animated_no animate__slideInUp_no" [ngClass]="faqExpand1 ? 'active' : '' ">
+                        <div class="item_inner" (click)="faqExpandToggle1()">
+                            <div class="item_header">
+                                <h2 class="d-flex">Menu's
+                                    <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                                </h2>
+                            </div>
+                            <div class="item_content">
+                                <div class="item_box d-flex" *ngFor="let item of foodCategoryItems; let index =index">
+                                    <div class="item_img center_img">
+                                        <img src="assets/imgs/{{item.image}}" class="crop_img">
+                                    </div>
+                                    <div class="item_info">
+                                        <h2 class="d-flex">
+                                            {{item.name}}
+                                            <span class="end add_remove_btn">
+												<small class="remove_icon"  (click)="remove(item)">-</small>
+												<strong class="ion-text-center">{{item.qauntity}}</strong>
+												<small class="add_icon" (click)="add(item)">+</small>
+											</span>
+                                        </h2>
+                                        <h3>₹ {{item.price}}</h3>
+                                        <p>{{item.description}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+
+                <div class="cart-button">
+                    <ion-row (click)="cart()">
+                        <ion-col size="7">
+                            <!-- <h4>2 Items</h4> -->
+                            <h3>
+                                ₹ {{totalCost}} <sub>+ taxes</sub>
+                            </h3>
+                        </ion-col>
+                        <ion-col size="5" class="d-flex">
+                            <h5 class="end">
+                                <span>View Cart</span>
+                                <ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+                            </h5>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-slide>
+
+
+            <ion-slide>
+                <ion-list lines="none" class="review">
+                    <ion-item class="animate__animated_no_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>George Timber</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.2</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April,17</span>
+                            </h4>
+                            <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+                            </p>
+                        </div>
+                    </ion-item>
+
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Emili Johnson</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.0</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star"></ion-icon>
+								</span>
+                                <span class="end">3 April,17</span>
+                            </h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h3>Jsckson Demmy</h3>
+                            <h4 class="d-flex">
+                                <ion-badge class="">4.5</ion-badge>
+                                <span class="retaing">
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+									<ion-icon class="zmdi zmdi-star active"></ion-icon>
+								</span>
+                                <span class="end">5 April, 17</span>
+                            </h4>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+
+
+            <ion-slide>
+                <ion-list lines="none" class="info">
+                    <ion-item class="animate__animated animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h2 class="text-light">{{"about_restro" | translate}} </h2>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                            </p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h2 class="text-light">{{"restro_tagline" | translate}} </h2>
+                            <p>Experience a good taste !</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h2 class="text-light">{{"opening_hours" | translate}} </h2>
+                            <p>Open Now (08:00 am - 10:00 pm)</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <ion-row>
+                            <ion-col size="6">
+                                <div class="item_inner">
+                                    <h2 class="text-light">{{"delivery_time" | translate}} </h2>
+                                    <p>Min. 35 mins</p>
+                                </div>
+                            </ion-col>
+                            <ion-col size="6">
+                                <div class="item_inner">
+                                    <h2 class="text-light">{{"min_order" | translate}} </h2>
+                                    <p>Min. $ 50.00</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h2 class="text-light">{{"pre_order_facility" | translate}} </h2>
+                            <p>Yes</p>
+                        </div>
+                    </ion-item>
+                    <ion-item class="animate__animated_no animate__slideInUp_no">
+                        <div class="item_inner">
+                            <h2 class="text-light">{{"payment_accepted" | translate}} </h2>
+                            <p>Online & COD</p>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

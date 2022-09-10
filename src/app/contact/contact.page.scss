@@ -1,0 +1,130 @@
+ion-header {
+    background: var(--white);
+}
+
+.banner {
+    padding: 0 18px;
+    overflow: hidden;
+
+    h1 {
+        color: var(--text-light);
+        margin: 0;
+        font-size: 1.45rem;
+        font-weight: 500;
+    }
+
+    h3 {
+        margin: 0;
+        color: var(--text-light);
+        font-size: .98rem;
+        margin-bottom: 27px;
+        margin-top: 11px;
+    }
+
+    ion-row {
+        //		margin: 0 -15px;
+
+        ion-col {
+            padding: 0 15px;
+
+            ion-button.btn {
+                font-size: .95rem;
+                font-weight: 500;
+
+                ion-icon {
+                    font-size: 1.1rem;
+                    min-width: 27px;
+                }
+
+                &.call_us {
+                    --background: var(--bg-color2);
+                    color: var(--primary);
+                }
+
+            }
+        }
+    }
+
+}
+
+ion-list {
+    background: var(--transparent) !important;
+    margin: 0;
+    padding: 0;
+    padding-top: 24px;
+
+    ion-card {
+        background: var(--bg-color2);
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        padding: 27px 20px 35px 20px;
+        margin-bottom: 5px;
+        align-items: flex-start;
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        h2 {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0;
+            padding-bottom: 20px;
+
+            span {
+                color: var(--primary);
+                font-weight: 500;
+            }
+        }
+
+        h3 {
+            margin: 0;
+
+            ion-icon {
+                color: var(--primary);
+                font-size: 1.3rem;
+                min-width: 37px;
+            }
+        }
+
+        .form {
+            width: 100%;
+
+            ion-row {
+                ion-col {
+                    padding: 0 5px;
+                }
+            }
+
+            ion-item {
+                margin-bottom: 27px;
+
+                ion-input {
+                    color:var(--text-light) !important;
+                }
+
+                ion-label {
+                    color: var(--text-light2) !important;
+                    font-weight: 400;
+                }
+
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    background: var(--bg-color2);
+    padding: 0 20px 17px 20px;
+
+    ion-button {
+        --animate-duration: .4s !important;
+    }
+}

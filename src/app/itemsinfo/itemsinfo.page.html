@@ -1,0 +1,84 @@
+<ion-header class="bg_transparent">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="title_inner d-flex">
+				<h3 class="end">
+					<span class="cart_icon" (click)="cart()">
+						<ion-icon class="zmdi zmdi-shopping-cart ion-text-start"></ion-icon>
+						<ion-badge>1</ion-badge>
+					</span>
+				</h3>
+			</div>
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+	<div class="banner">
+		<div class="banner_img center_img">
+			<img src="assets/imgs/f1.png" class="crop_img">
+			<div class="item_price">
+				<h4>$ 45.00</h4>
+			</div>
+		</div>
+		<div class="banner_details">
+			<h2 class="animate__animated_no animate__slideInUp_no">Red Thai Curry</h2>
+			<p class="animate__animated_no animate__slideInUp_no">Red curry paste cooked in milk with meat added, such as chicken</p>
+		</div>
+	</div>
+
+	<div class="form">
+		<ion-list lines="none" class="option">
+			<ion-card class="extra_toppings">
+				<ion-card-header>
+					Extra Toppings
+				</ion-card-header>
+				<ion-item class="animate__animated_no animate__slideInUp_no">
+					<ion-checkbox item-start></ion-checkbox>
+					<ion-label class="d-flex">Cheesse<span class="end">+ $ 5.00</span></ion-label>
+				</ion-item>
+				<ion-item class="animate__animated_no animate__slideInUp_no">
+					<ion-checkbox item-start></ion-checkbox>
+					<ion-label class="d-flex">Mayonnaise<span class="end">+ $ 5.00</span></ion-label>
+				</ion-item>
+				<ion-item class="animate__animated_no animate__slideInUp_no">
+					<ion-checkbox item-start></ion-checkbox>
+					<ion-label class="d-flex">Butter<span class="end">+ $ 5.00</span></ion-label>
+				</ion-item>
+				<ion-item>
+					<ion-checkbox item-start></ion-checkbox>
+					<ion-label class="d-flex">Corn<span class="end">+ $ 5.00</span></ion-label>
+				</ion-item>
+			</ion-card>
+
+			<ion-card class="instruction animate__animated_no animate__slideInUp_no">
+				<ion-card-header>
+					{{"special_info" | translate}}
+				</ion-card-header>
+				<ion-item mode="md" lines="none">
+					<ion-textarea rows="2" type="text" placeholder=""></ion-textarea>
+				</ion-item>
+			</ion-card>
+		</ion-list>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated_no animate__slideInUp_no">
+	<ion-row>
+		<ion-col size="5">
+			<div class="add_remove_btn d-flex">
+				<small class="remove_icon">-</small>
+				<strong class="ion-text-center">0</strong>
+				<small class="add_icon">+</small>
+			</div>
+		</ion-col>
+		<ion-col size="7">
+			<ion-button size="large" shape="full" class="btn" (click)="cart()">
+				{{'add2order' | translate}}
+			</ion-button>
+		</ion-col>
+	</ion-row>
+</ion-footer>

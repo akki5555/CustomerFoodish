@@ -1,0 +1,2 @@
+alias: foodish_t
+password: foodish_t

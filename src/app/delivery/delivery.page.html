@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{"delivery_info" | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="form">
+        <ion-list lines="none">
+            <div class="text_box" *ngIf="customerAddress">
+                <h2 class="d-flex">
+                    {{'where_to_deliver' | translate}}
+                    <span class="end change" (click)="add_address()">{{'change' | translate}}
+						<ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+					</span>
+                </h2>
+                <div class="address_container" *ngFor="let add of customerAddress">
+                    <div class="address address_home" [ngClass]="{'condition-Color' : add.id == checkNumber}" (click)="checkCondition(add)">
+                        <p>{{add.address}} </p>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>
+
+
+<ion-footer class="ion-no-border animate__animated_no animate__slideInUp_no">
+
+    <div class="confirm_order" (click)="payment()">
+        <h2 class="d-flex">{{"continue_to_pay_total_amount" | translate}} <span class="end">₹ {{restaurantData.totalCost}}</span></h2>
+    </div>
+</ion-footer>

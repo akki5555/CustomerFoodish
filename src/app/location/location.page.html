@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title> Address </ion-title>
+    </ion-toolbar>
+    <!-- <div class="search_box d-flex">
+               <ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+        <ion-searchbar class="ion-no-padding" placeholder="{{'search_placeholder' | translate}}"></ion-searchbar>
+    </div>
+    <p>(eg. New York, City Garden, etc.)</p> -->
+</ion-header>
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+<ion-content class="bg_color">
+    <div class="use_current_location animate__animated_no animate__slideInUp_no" (click)="home()">
+        <h2 class="d-flex">
+            <ion-icon class="zmdi zmdi-gps-dot ion-text-start"></ion-icon> {{"use_current_location" | translate}}
+        </h2>
+    </div>
+
+    <div class="recent_location d-flex animate__animated_no animate__slideInUp_no" *ngFor="let add of customerAddress" style="border: 1px dashed #f8a30e;">
+        <!-- <ion-icon class="zmdi zmdi-time-restore ion-text-start"></ion-icon>_no -->
+        <div class="text" style="padding:15px">
+            <!-- <h2 class="d-flex animate__animated_no animate__slideInUp_no"> {{"recent_location" | translate}}</h2> -->
+            <h3 class="animate__animated_no animate__slideInUp_no" (click)="home(add)">{{add.address}}</h3>
+            <!-- <h3 class="animate__animated_no animate__slideInUp_no" (click)="home()">Los Angeles, USA</h3>
+				<h3 class="animate__animated_no animate__slideInUp_no" (click)="home()">New City Garden, Hemilton</h3> -->
+        </div>
+    </div>
+
+
+</ion-content>
+
+<!-- <ion-footer class="ion-no-border">
+    <ion-icon class="zmdi zmdi-pin" text-start></ion-icon>
+    <div class="text">
+        <h2 class="d-flex animate__animated_no animate__slideInUp_no">{{"save_address" | translate}}</h2>
+        <div class="address_container">
+            <div class="address animate__animated_no animate__slideInUp_no" (click)="home()">
+                <h3>Home</h3>
+                <p>104, Adina Park, Opp HSBC Bank, Old golden street, Washington DC, USA </p>
+            </div>
+            <div class="address animate__animated_no animate__slideInUp_no" (click)="home()">
+                <h3>Office</h3>
+                <p>104, Adina Park, Opp HSBC Bank, Old golden street, Washington DC, USA </p>
+            </div>
+            <div class="address animate__animated_no animate__slideInUp_no" (click)="home()">
+                <h3>Other</h3>
+                <p>104, Adina Park, Opp HSBC Bank, Old golden street, Washington DC, USA </p>
+            </div>
+        </div>
+    </div>
+</ion-footer> -->

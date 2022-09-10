@@ -1,0 +1,655 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>{{"my_orders" | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<p class="headig-text">{{"orders_process" | translate}}</p>
+	<ion-list lines="none">
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Rainbow Fastfood
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 96.00
+						<ion-badge color="danger">Preparing</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no"  (click)="order_info2()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">
+						Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #221453</span>
+							<ion-icon></ion-icon>
+							<span>2 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 80.00
+						<ion-badge color="warning">Track order</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<p class="headig-text">{{"past_orders" | translate}}</p>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Jackson Resto
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">12 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Gloden treats
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 77.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Jackson Resto
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">12 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Gloden treats
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 77.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Jackson Resto
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">12 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Gloden treats
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 77.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Jackson Resto
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">12 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Gloden treats
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 77.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Jackson Resto
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">12 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Gloden treats
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 77.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Jackson Resto
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">12 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Gloden treats
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 77.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">14 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Jackson Resto
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">12 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Gloden treats
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 77.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+		<ion-item class="animate__animated_no animate__fadeInUp_no" (click)="order_info()">
+			<ion-row class="d-flex">
+				<ion-col size="2">
+					<div class="date">13 May</div>
+				</ion-col>
+				<ion-col size="7">
+					<div class="items">Global China Restro
+						<small class="d-flex">
+							<span>{{"order" | translate}} #212217</span>
+							<ion-icon></ion-icon>
+							<span>3 {{"items" | translate}}</span>
+						</small>
+					</div>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end d-flex">
+					<div class="status end">$ 46.00
+						<ion-badge color="secondary">Delivered</ion-badge>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-item>
+	</ion-list>
+</ion-content>

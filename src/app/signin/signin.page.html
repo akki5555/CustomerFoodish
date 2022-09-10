@@ -1,0 +1,44 @@
+<ion-content class="bg_color" fullscreen>
+    <div class="banner animate__animated animate__zoomIn">
+        <img src="assets/imgs/sign_in_banner.png" class="banner_bg">
+        <div class="logo">
+            <img src="assets/imgs/logo.png">
+            <h2>{{"app_title" | translate}}</h2>
+        </div>
+    </div>
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item class="animate__animated_no animate__slideInUp_no" lines="none" style="margin-top:10px;">
+                <ion-label mode="md" position="floating">{{"email_address" | translate}}</ion-label>
+                <ion-input mode="md" [(ngModel)]="email" type="email"></ion-input>
+            </ion-item>
+
+            <ion-item class="animate__animated_no animate__slideInUp_no" lines="none">
+                <ion-label mode="md" position="floating">{{"password" | translate}}</ion-label>
+                <ion-input mode="md" [(ngModel)]="password" type="password"></ion-input>
+                <h5 slot="end" (click)="forgotpassword()">{{"forgot" | translate}}</h5>
+            </ion-item>
+            <ion-button size="large" shape="block" class="btn animate__animated_no animate__slideInUp_no" (click)="location()">{{'login' | translate}}</ion-button>
+        </ion-list>
+    </div>
+
+
+    <div class="social_login">
+        <!-- <p class="ion-text-center animate__animated_no animate__slideInUp_no">{{'or_continue_with' | translate}}</p>
+        <ion-row class="animate__animated_no animate__slideInUp_no">
+            <ion-col size="6">
+                <ion-button size="large" shape="block" class="btn fb_btn" (click)="location()">
+                    <img src="assets/imgs/ic_facebook.png">{{'facebook' | translate}}
+                </ion-button>
+            </ion-col>
+
+            <ion-col size="6">
+                <ion-button size="large" shape="block" class="btn google_btn" (click)="location()">
+                    <img src="assets/imgs/ic_google.png">{{'google' | translate}}
+                </ion-button>
+            </ion-col>
+        </ion-row> -->
+        <ion-button size="large" shape="block" class="btn new_user animate__animated_no animate__slideInUp_no" (click)="signup()">{{'new_user' | translate}}</ion-button>
+    </div>
+</ion-content>

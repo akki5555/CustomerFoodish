@@ -1,0 +1,53 @@
+<ion-app [dir]="rtlSide">
+    <ion-split-pane contentId="main-content">
+        <ion-menu contentId="main-content" type="overlay">
+            <ion-header>
+                <div class="profile_box" (click)="my_profile()">
+                    <ion-menu-toggle auto-hide="false">
+                        <h3>{{"hey" | translate}},</h3>
+                        <h2>{{userName}}</h2>
+                        <h3 class="d-flex">
+                            {{userNumber}}
+                            <ion-icon class="zmdi zmdi-chevron-right end ion-text-end"></ion-icon>
+                        </h3>
+                    </ion-menu-toggle>
+                </div>
+
+                <div class="buy_this_app" *ngIf="config.demoMode" (click)="buyappalert()">
+                    <ion-menu-toggle auto-hide="false">
+                        <h2>
+                            <!-- <ion-icon class="zmdi zmdi-shopping-cart"></ion-icon> -->
+                            {{"buy_this_app" | translate}}
+                        </h2>
+                    </ion-menu-toggle>
+                </div>
+            </ion-header>
+
+            <ion-content fullscreen>
+                <ion-list id="inbox-list" lines="none">
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+                        <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+                            <div class="item_inner d-flex">
+                                <ion-icon slot="start" class="{{p.icon}}"></ion-icon>
+                                <div class="text_box">
+                                    <h2>{{ p.title | translate}}</h2>
+                                    <h3>{{ p.sub_title | translate}}</h3>
+                                </div>
+                            </div>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+
+            <ion-footer class="ion-no-border" *ngIf="config.demoMode">
+                <div class="developed_by d-flex" (click)="developed_by()">
+                    <h2>{{"developed_by" | translate}}</h2>
+                    <div class="img_box  end">
+                        <img src="assets/imgs/Opus.png">
+                    </div>
+                </div>
+            </ion-footer>
+        </ion-menu>
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

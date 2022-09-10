@@ -1,0 +1,68 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="title_inner d-flex">
+				<span class="center_title">{{"my_profile" | translate}}</span>
+				<span class="end" (click)="signin()">{{"logout" | translate}}</span>
+			</div>
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+	<ion-list lines="none">
+		<ion-card class="d-flex">
+			<h3>
+				<ion-icon class="zmdi zmdi-assignment-account ion-text-start"></ion-icon>
+			</h3>
+
+			<div class="form">
+				<h2 class="d-flex">{{"personal_details" | translate}}
+				</h2>
+				<ion-item class="animate__animated_no animate__fadeInUp_no" lines="none">
+					<ion-label mode="md" position="floating">{{"name" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="Sam Smith" readonly="true"></ion-input>
+				</ion-item>
+				<ion-item class="animate__animated_no animate__fadeInUp_no" lines="none">
+					<ion-label mode="md" position="floating">{{"email" | translate}}</ion-label>
+					<ion-input mode="md" type="email" value="samsmith@mail.com" readonly="true"></ion-input>
+				</ion-item>
+
+				<ion-item class="animate__animated_no animate__fadeInUp_no" lines="none">
+					<ion-label mode="md" position="floating">{{"phone" | translate}}</ion-label>
+					<ion-input mode="md" type="text" value="+1 987 654 3210" readonly="true"></ion-input>
+				</ion-item>
+			</div>
+		</ion-card>
+
+		<ion-card class="d-flex saved_address">
+			<h3>
+				<ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+			</h3>
+
+			<div class="form">
+				<h2 class="d-flex">{{"ur_saved_address" | translate}}
+					<span class="end" (click)="add_address()">{{"add_new" | translate}}</span>
+				</h2>
+
+				<div class="address_container">
+					<div class="address animate__animated_no animate__fadeInUp_no" (click)="add_address()">
+						<h3 class="d-flex">Home <span class="end ion-text-end">{{"edit" | translate}}</span></h3>
+						<p>104, Adina Park, Opp HSBC Bank, Old golden street, Washington DC, USA </p>
+					</div>
+					<div class="address animate__animated_no animate__fadeInUp_no" (click)="add_address()">
+						<h3 class="d-flex">Office <span class="end ion-text-end">{{"edit" | translate}}</span></h3>
+						<p>104, Adina Park, Opp HSBC Bank, Old golden street, Washington DC, USA </p>
+					</div>
+					<div class="address animate__animated_no animate__fadeInUp_no" (click)="add_address()">
+						<h3 class="d-flex">Other <span class="end ion-text-end">{{"edit" | translate}}</span></h3>
+						<p>104, Adina Park, Opp HSBC Bank, Old golden street, Washington DC, USA </p>
+					</div>
+				</div>
+			</div>
+		</ion-card>
+	</ion-list>
+</ion-content>

@@ -1,0 +1,153 @@
+ion-header {
+	background: var(--white);
+	padding-bottom: 10px;
+
+	.search_box {
+		margin: 0 auto;
+		border-bottom: 1px solid var(--ion-color-medium-tint);
+
+		ion-icon {
+			color: var(--text-light);
+			font-size: 1.4rem;
+			min-width: 35px;
+			height: 35px;
+			line-height: 35px;
+			z-index: 99;
+
+		}
+
+		ion-searchbar {
+			--background: var(--transparent) !important;
+			--color: var(--text-light);
+			--placeholder-opacity: 1;
+			--placeholder-font-weight: 500 !important;
+			--box-shadow: none !important;
+
+			.searchbar-input {
+				padding-left: unset;
+				padding-right: unset;
+				-webkit-padding-start: 0px;
+				padding-inline-start: 0px;
+				-webkit-padding-end: 0px;
+				padding-inline-end: 0px;
+			}
+		}
+	}
+
+	p {
+		width: calc(100% - 40px);
+		margin: 0 auto;
+		color: var(--text-light);
+		font-size: .75rem;
+		font-weight: 500;
+		margin-top: 10px;
+		opacity: .5;
+	}
+}
+
+.use_current_location {
+	width: calc(100% - 40px);
+	margin: 0 auto;
+	margin-top: 36px;
+
+}
+
+h2 {
+	margin: 0;
+	color: var(--primary);
+	font-size: 1.15rem;
+
+	ion-icon {
+		font-size: 1.3rem !important;
+		min-width: 30px;
+	}
+}
+
+.recent_location {
+	width: calc(100% - 40px);
+	margin: 0 auto;
+	align-items: flex-start;
+	margin-top: 35px;
+
+	h2 {
+		color: var(--primary);
+		margin-bottom: 25px;
+	}
+
+	ion-icon {
+		font-size: 1.3rem;
+		min-width: 30px;
+		color: var(--white);
+	}
+
+	h3 {
+		margin: 0;
+		color: var(--text-light2);
+		font-size: .94rem;
+		letter-spacing: 0;
+		margin-bottom: 11px;
+	}
+}
+
+ion-footer {
+	background: var(--white);
+	padding: 25px 20px;
+	padding-bottom: 0;
+	align-items: flex-start;
+	display: flex;
+
+	ion-icon {
+		font-size: 1.3rem;
+		min-width: 30px;
+		color: var(--primary);
+	}
+
+	h2 {
+		padding-top: 4px;
+		padding-bottom: 10px;
+	}
+
+	.address_container {
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+
+	.address {
+		margin-bottom: 23px;
+
+		h3 {
+			margin: 0;
+			color: var(--text-light);
+			font-size: 1rem;
+			margin-bottom: 7px;
+		}
+
+		p {
+			margin: 0;
+			color: var(--text-light2);
+			font-size: .85rem;
+			line-height: 22px;
+			font-weight: 400;
+			letter-spacing: .4px;
+		}
+	}
+}
+
+ion-searchbar {
+	.searchbar-input {
+		-webkit-padding-start: 0px;
+		padding-inline-start: 0px;
+		-webkit-padding-end: 0px;
+		padding-inline-end: 0px;
+	}
+}
+
+.searchbar-input-container {
+	display: none;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+	--padding: 0 !important;
+}

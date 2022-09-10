@@ -1,0 +1,41 @@
+ion-content {
+    --background: rgba(0, 0, 0, 0) !important;
+}
+
+ion-footer {
+    background: var(--bg-color-secondary);
+    padding-top: 24px;
+
+    .form {
+        width: 100%;
+
+        ion-row {
+            ion-col {
+                padding: 0 5px;
+            }
+        }
+
+        ion-item {
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            margin-bottom: 27px;
+            
+
+            ion-label {
+                color: var(--text-light2) !important;
+                font-weight: 400;
+            }
+            ion-input {
+                color:var(--text-light);
+            }
+            ion-textarea {
+                color:var(--text-light);  
+            }
+            ion-textarea {
+                margin-top: 0 !important;
+                font-size: .85rem !important;
+                font-weight: 400 !important;
+            }
+        }
+    }
+}

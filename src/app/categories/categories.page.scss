@@ -1,0 +1,42 @@
+
+.order-item {
+    width: 100%;
+    display: inline-block;
+    background: var(--bg-color2);
+    border-radius: 10px;
+    padding-bottom: 5px;
+
+    
+
+    .img-box {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 110px;
+        border-radius: 10px;
+    }
+
+    h4 {
+        font-size: .95rem;
+        font-weight: 400;
+        color: var(--text-light);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0;
+        margin-top: 12px;
+        padding-bottom: 4px;
+        text-align: center;
+    }
+
+    p {
+        font-size: .66rem;
+        margin-top: 0;
+        color: var(--text-light2);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: 500;
+        opacity: .7;
+    }
+}

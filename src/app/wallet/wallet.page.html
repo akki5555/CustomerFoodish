@@ -1,0 +1,2069 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            {{"wallet" | translate}}
+        </ion-title>
+    </ion-toolbar>
+
+    <div class="banner ion-text-center">
+        <p class="animate__animated_no animate__fadeInUp_no">{{'available_balance' | translate}}</p>
+        <h2 class="animate__animated_no animate__fadeInUp_no">$ 105.50</h2>
+        <ion-row class="animate__animated_no animate__fadeInUp_no">
+            <ion-col class="animate__animated_no animate__zoomIn_no" size="6">
+                <ion-button size="large" shape="block" class="btn send_to_bank" (click)="bankdatails()">{{'send_to_bank' | translate}}</ion-button>
+            </ion-col>
+            <ion-col class="animate__animated_no animate__zoomIn_no" size="6">
+                <ion-button size="large" shape="block" class="btn">{{'add_money' | translate}}</ion-button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list lines="none">
+        <h2>{{"recent" | translate}}</h2>
+        <ion-item class="animate__animated_no_no animate__fadeInUp_no_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Global China Restro</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$5.20</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>3 items | 30 June 2018, 11:59 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Rainbow Fast Food </h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no spend">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Sent to Bank</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>-$100.00</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>29 June 2018, 09:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Money Added</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$9.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>28 June 2018, 10:12 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>HSKY Bank of USA</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated_no animate__fadeInUp_no add">
+            <div class="item_inner">
+                <ion-row>
+                    <ion-col size="7">
+                        <h3>Luke Cafe Point</h3>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <h5>$68.50</h5>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="7">
+                        <p>2 items | 30 June 2018, 10:23 am</p>
+                    </ion-col>
+
+                    <ion-col class="ion-text-end">
+                        <p>{{'earnings' | translate}}</p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,84 @@
+.map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+}
+
+.scroll-content {
+    margin-top: 0 !important;
+}
+
+.to,
+.from {
+    position: absolute;
+    z-index: 999;
+
+    ion-icon {
+        color: var(--orange-color);
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+.to {
+    ion-icon {
+        color: var(--secondary);
+    }
+}
+
+.deliveryman_location {
+    position: absolute;
+    z-index: 999;
+
+    img {
+        width: 16px;
+    }
+
+}
+
+ion-footer {
+    --animate-duration: .4s !important;
+
+    .info {
+        background: var(--bg-color2);
+        padding: 25px 20px 18px 20px;
+
+        p {
+            color: var(--text-light2);
+            margin: 0;
+            font-size: .75rem;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: var(--text-light);
+            margin: 0;
+            font-size: 1rem;
+            margin-bottom: 2px;
+            letter-spacing: .5px;
+        }
+    }
+
+    ion-row {
+        ion-col {
+            padding: 0;
+
+            ion-button.btn {
+                ion-icon {
+                    font-size: 1.2rem;
+                    min-width: 32px;
+                }
+
+                &.call_now {
+                    --background: var(--white);
+                    color: var(--primary);
+                    font-weight: 500;
+                    letter-spacing: 0px;
+                }
+            }
+        }
+    }
+}

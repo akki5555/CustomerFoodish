@@ -1,0 +1,299 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <div class="location">
+                    <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                    <h2 class="dots"> {{addressInfo.address}} </h2>
+                </div>
+
+                <span class="end cart_icon" (click)="cart()">
+					<ion-icon class="zmdi zmdi-shopping-cart ion-text-start"></ion-icon>
+					<ion-badge>1</ion-badge>
+				</span>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+    <div class="banner">
+        <h1 class="animate__animated_no animate__slideInUp_no">Discover new <br>tasting experinces</h1>
+        <!-- <div class="search_box d-flex animate__animated_no animate__slideInUp_no">
+			<ion-icon class="zmdi zmdi-search ion-text-start" (click)="search()"></ion-icon> -->
+        <!--			<ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_box' | translate}}" readonly="true"></ion-searchbar>-->
+        <!-- <h2 (click)="search()">{{'search_box' | translate}}</h2>
+			<ion-icon class="zmdi zmdi-tune end ion-text-end" (click)="refine()"></ion-icon>
+		</div> -->
+    </div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <ion-card class="order-scroll">
+        <h2 class="d-flex">
+            {{"order_text" | translate}}
+            <span class="end" (click)="categories()">
+				{{"view_all" | translate}}
+			</span>
+        </h2>
+        <div class="order-container">
+            <div class="scroll_container" style="height: 145px; white-space: nowrap;">
+                <div class="order-item animate__animated_no animate__zoomIn_no" *ngFor="let item of foodCategory;">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/{{item.image}}" class="crop_img">
+                    </div>
+                    <h4>{{item.name}}</h4>
+                    <p>{{item.quantity}} Restaurants</p>
+                </div>
+                <!-- <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f7.png" class="crop_img">
+                    </div>
+                    <h4>South Indian</h4>
+                    <p>56 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f3.png" class="crop_img">
+                    </div>
+                    <h4>Chiness</h4>
+                    <p>49 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f4.png" class="crop_img">
+                    </div>
+                    <h4>Indian Food</h4>
+                    <p>68 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f5.png" class="crop_img">
+                    </div>
+                    <h4>Italian Food</h4>
+                    <p>88 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f9.png" class="crop_img">
+                    </div>
+                    <h4>Fast Food</h4>
+                    <p>88 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f3.png" class="crop_img">
+                    </div>
+                    <h4>South Indian</h4>
+                    <p>56 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f3.png" class="crop_img">
+                    </div>
+                    <h4>Chiness</h4>
+                    <p>49 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f8.png" class="crop_img">
+                    </div>
+                    <h4>Indian Food</h4>
+                    <p>68 Restaurants</p>
+                </div>
+                <div class="order-item animate__animated_no animate__zoomIn_no">
+                    <div class="img-box center_img">
+                        <img src="assets/imgs/f5.png" class="crop_img">
+                    </div>
+                    <h4>Italian Food</h4>
+                    <p>88 Restaurants</p>
+                </div> -->
+            </div>
+        </div>
+    </ion-card>
+    <div class="near_you">
+        <h2 class="d-flex">{{"restaurants_near" | translate}}
+
+            <span class="end" (click)="restro()">
+				{{"view_all" | translate}}
+			</span>
+        </h2>
+        <ion-list lines="none">
+            <ion-item class="animate__animated_no animate__slideInUp_no" (click)="restro_info(item)" *ngFor="let item of restaurants;">
+                <div class="item_ineer">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/{{item.image}}" class="crop_img">
+                        <ion-badge color="success">{{item.rating}}</ion-badge>
+                        <div class="details">
+                            <h2>{{item.name}}</h2>
+                            <p class="d-flex">
+                                <span class="address">{{item.description}}</span>
+                                <ion-icon class="zmdi zmdi-bookmark-outline ion-text-end end"></ion-icon>
+                            </p>
+                        </div>
+                    </div>
+                    <ion-row>
+                        <ion-col size="5">
+                            <h4>30-45 min</h4>
+                            <h3>{{'avg_dlvr_time' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h4>₹ {{item.min_Amount}}</h4>
+                            <h3>{{'min_order' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="4">
+                            <h4>{{item.payment_method}}</h4>
+                            <h3>{{'pay_mod' | translate}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-item>
+            <!-- <ion-item class="animate__animated_no animate__slideInUp_no" (click)="restro_info()">
+                <div class="item_ineer">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/r2.png" class="crop_img">
+                        <ion-badge color="success">4.2</ion-badge>
+                        <div class="details">
+                            <h2>Global Fusion China Chef</h2>
+                            <p class="d-flex">
+                                <span class="address">Chinees food, Panjabi Food, South indian, Gujarati food</span>
+                                <ion-icon class="zmdi zmdi-bookmark-outline ion-text-end end"></ion-icon>
+                            </p>
+                        </div>
+                    </div>
+                    <ion-row>
+                        <ion-col size="5">
+                            <h4>30-45 min</h4>
+                            <h3>{{'avg_dlvr_time' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h4>$ 50</h4>
+                            <h3>{{'min_order' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="4">
+                            <h4>Online & COD</h4>
+                            <h3>{{'pay_mod' | translate}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated_no animate__slideInUp_no" (click)="restro_info()">
+                <div class="item_ineer">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/r2.png" class="crop_img">
+                        <ion-badge color="success">4.2</ion-badge>
+                        <div class="details">
+                            <h2>Global Fusion China Chef</h2>
+                            <p class="d-flex">
+                                <span class="address">Chinees food, Panjabi Food, South indian, Gujarati food</span>
+                                <ion-icon class="zmdi zmdi-bookmark-outline ion-text-end end"></ion-icon>
+                            </p>
+                        </div>
+                    </div>
+                    <ion-row>
+                        <ion-col size="5">
+                            <h4>30-45 min</h4>
+                            <h3>{{'avg_dlvr_time' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h4>$ 50</h4>
+                            <h3>{{'min_order' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="4">
+                            <h4>Online & COD</h4>
+                            <h3>{{'pay_mod' | translate}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated_no animate__slideInUp_no" (click)="restro_info()">
+                <div class="item_ineer">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/r2.png" class="crop_img">
+                        <ion-badge color="success">4.2</ion-badge>
+                        <div class="details">
+                            <h2>Global Fusion China Chef</h2>
+                            <p class="d-flex">
+                                <span class="address">Chinees food, Panjabi Food, South indian, Gujarati food</span>
+                                <ion-icon class="zmdi zmdi-bookmark-outline ion-text-end end"></ion-icon>
+                            </p>
+                        </div>
+                    </div>
+                    <ion-row>
+                        <ion-col size="5">
+                            <h4>30-45 min</h4>
+                            <h3>{{'avg_dlvr_time' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h4>$ 50</h4>
+                            <h3>{{'min_order' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="4">
+                            <h4>Online & COD</h4>
+                            <h3>{{'pay_mod' | translate}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated_no animate__slideInUp_no" (click)="restro_info()">
+                <div class="item_ineer">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/r2.png" class="crop_img">
+                        <ion-badge color="success">4.2</ion-badge>
+                        <div class="details">
+                            <h2>Global Fusion China Chef</h2>
+                            <p class="d-flex">
+                                <span class="address">Chinees food, Panjabi Food, South indian, Gujarati food</span>
+                                <ion-icon class="zmdi zmdi-bookmark-outline ion-text-end end"></ion-icon>
+                            </p>
+                        </div>
+                    </div>
+                    <ion-row>
+                        <ion-col size="5">
+                            <h4>30-45 min</h4>
+                            <h3>{{'avg_dlvr_time' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h4>$ 50</h4>
+                            <h3>{{'min_order' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="4">
+                            <h4>Online & COD</h4>
+                            <h3>{{'pay_mod' | translate}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated_no animate__slideInUp_no" (click)="restro_info()">
+                <div class="item_ineer">
+                    <div class="img_box center_img">
+                        <img src="assets/imgs/r2.png" class="crop_img">
+                        <ion-badge color="success">4.2</ion-badge>
+                        <div class="details">
+                            <h2>Global Fusion China Chef</h2>
+                            <p class="d-flex">
+                                <span class="address">Chinees food, Panjabi Food, South indian, Gujarati food</span>
+                                <ion-icon class="zmdi zmdi-bookmark-outline ion-text-end end"></ion-icon>
+                            </p>
+                        </div>
+                    </div>
+                    <ion-row>
+                        <ion-col size="5">
+                            <h4>30-45 min</h4>
+                            <h3>{{'avg_dlvr_time' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h4>$ 50</h4>
+                            <h3>{{'min_order' | translate}}</h3>
+                        </ion-col>
+                        <ion-col size="4">
+                            <h4>Online & COD</h4>
+                            <h3>{{'pay_mod' | translate}}</h3>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-item> -->
+        </ion-list>
+    </div>
+</ion-content>

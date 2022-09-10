@@ -1,0 +1,128 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'order' | translate}} #221453</ion-title>
+	</ion-toolbar>
+
+
+	<div class="trak">
+		<ion-row>
+			<ion-col class="active ion-text-center animate__animated_no animate__fadeInLeft_no">
+				<ion-icon class="zmdi zmdi-check-all"></ion-icon>
+				<p>{{"order_placed" | translate}}</p>
+				<h6>4:00pm</h6>
+			</ion-col>
+			<ion-col class="active ion-text-center animate__animated_no animate__fadeInLeft_no">
+				<ion-icon class="zmdi zmdi-cutlery"></ion-icon>
+				<p>{{"preparing" | translate}}</p>
+				<h6>4:00pm</h6>
+			</ion-col>
+			<ion-col class="active ion-text-center animate__animated_no animate__fadeInLeft_no">
+				<ion-icon class="zmdi zmdi-thumb-up"></ion-icon>
+				<p>{{"order_ready" | translate}}</p>
+				<h6>-</h6>
+			</ion-col>
+			<ion-col class="active ion-text-center animate__animated_no animate__fadeInLeft_no">
+				<ion-icon class="zmdi zmdi-bike"></ion-icon>
+				<p>{{"in_transist" | translate}}</p>
+				<h6>4:20pm</h6>
+			</ion-col>
+			<ion-col class="ion-text-center animate__animated_no animate__fadeInLeft_no">
+				<ion-icon class="zmdi zmdi-home"></ion-icon>
+				<p>{{"delivered" | translate}}</p>
+				<h6>-</h6>
+			</ion-col>
+		</ion-row>
+	</div>
+</ion-header>
+
+<ion-content fullscreen>
+	<div class="restro_details">
+		<h2 class="animate__animated_no animate__fadeInUp_no">Global China Restro </h2>
+		<p class="animate__animated_no animate__fadeInUp_no">Near City Garden, New York, USA</p>
+	</div>
+
+	<ion-card>
+		<ion-row class="animate__animated_no animate__fadeInUp_no">
+			<ion-col size="6">
+				<h2>{{"ordered_items" | translate}}</h2>
+			</ion-col>
+			<ion-col size="3" class="ion-text-center">
+				<h4>{{"qnt" | translate}}</h4>
+			</ion-col>
+			<ion-col size="3" class="ion-text-end">
+				<h4>{{"amount" | translate}}</h4>
+			</ion-col>
+		</ion-row>
+		<div class="items_details ">
+			<ion-row class="animate__animated_no animate__fadeInUp_no">
+				<ion-col size="6">
+					<h3>Dal Makhini</h3>
+				</ion-col>
+				<ion-col size="3" class="ion-text-center">
+					<h3><strong>1</strong></h3>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3><strong>$ 25.00</strong></h3>
+				</ion-col>
+			</ion-row>
+
+			<ion-row class="animate__animated_no animate__fadeInUp_no">
+				<ion-col size="6">
+					<h3>Red Thai Curry</h3>
+				</ion-col>
+				<ion-col size="3" class="ion-text-center">
+					<h3><strong>1</strong></h3>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3><strong>$ 45.00</strong></h3>
+				</ion-col>
+			</ion-row>
+
+			<ion-row class="animate__animated_no animate__fadeInUp_no">
+				<ion-col size="6">
+					<h3>French Fries</h3>
+				</ion-col>
+				<ion-col size="3" class="ion-text-center">
+					<h3><strong>1</strong></h3>
+				</ion-col>
+				<ion-col size="3" class="ion-text-end">
+					<h3><strong>$ 05.00</strong></h3>
+				</ion-col>
+			</ion-row>
+		</div>
+		<ion-row class="animate__animated_no animate__fadeInUp_no">
+			<ion-col size="9" class="ion-text-end">
+				<h4>{{"total_amount" | translate}}</h4>
+			</ion-col>
+			<ion-col size="3" class="ion-text-end">
+				<h3><strong>$ 75.00</strong></h3>
+			</ion-col>
+		</ion-row>
+		<ion-row class="animate__animated_no animate__fadeInUp_no">
+			<ion-col size="9" class="ion-text-end">
+				<h4>{{"text" | translate}}</h4>
+			</ion-col>
+			<ion-col size="3" class="ion-text-end">
+				<h3><strong>$ 05.00</strong></h3>
+			</ion-col>
+		</ion-row>
+		<ion-row class="grand_total animate__animated_no animate__fadeInUp_no">
+			<ion-col size="9" class="ion-text-end">
+				<h3>{{"paid_via" | translate}} Credit Card</h3>
+			</ion-col>
+			<ion-col size="3" class="ion-text-end">
+				<h3><strong>$ 80.00</strong></h3>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated_no animate__fadeInUp_no">
+	<ion-button size="large" shape="full" class="btn" (click)="deliveryman()">
+		<ion-icon class="zmdi zmdi-navigation ion-text-start"></ion-icon>
+		{{'track_order' | translate}}
+	</ion-button>
+</ion-footer>

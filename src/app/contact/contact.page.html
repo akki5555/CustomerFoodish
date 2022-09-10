@@ -1,0 +1,60 @@
+<ion-header class="bg_transparent">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+	<div class="banner">
+		<h1 class="animate__animated_no animate__fadeInUp_no">{{'we_happy_to' | translate}}<br>{{'hear_from_you' | translate}}</h1>
+		<h3 class="animate__animated_no animate__fadeInUp_no">{{'let_us_know_your_queries_feedbacks' | translate}}</h3>
+
+		<ion-row class="animate__animated_no animate__fadeInUp_no">
+			<ion-col size="6">
+				<ion-button size="large" shape="block" class="btn call_us">
+					<ion-icon class="zmdi zmdi-local-phone ion-text-start"></ion-icon>
+					{{'call_us' | translate}}
+				</ion-button>
+			</ion-col>
+			<ion-col size="6">
+				<ion-button size="large" shape="block" class="btn">
+					<ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+					{{'mail_us' | translate}}
+				</ion-button>
+			</ion-col>
+		</ion-row>
+	</div>
+	<ion-list lines="none">
+		<ion-card class="d-flex">
+			<h3>
+				<ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+			</h3>
+
+			<div class="form">
+				<h2 class="d-flex animate__animated_no animate__fadeInUp_no">{{"send_your_message" | translate}}
+				</h2>
+				<ion-item class="animate__animated_no animate__fadeInUp_no" lines="none">
+					<ion-label mode="md" position="floating">{{"full_name" | translate}}</ion-label>
+					<ion-input mode="md" type="name" value="Sam Smith"></ion-input>
+				</ion-item>
+				<ion-item class="animate__animated_no animate__fadeInUp_no" lines="none">
+					<ion-label mode="md" position="floating">{{"contact_number" | translate}}</ion-label>
+					<ion-input mode="md" type="text" value="+1 987 654 3210"></ion-input>
+				</ion-item>
+
+				<ion-item class="animate__animated_no animate__fadeInUp_no" lines="none">
+					<ion-label mode="md" position="floating">{{"your_message" | translate}}</ion-label>
+					<ion-input mode="md" type="text" value="Write your message"></ion-input>
+				</ion-item>
+			</div>
+		</ion-card>
+	</ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<ion-button size="large" shape="block" class="btn animate__animated_no animate__fadeInUp_no">{{'submit_now' | translate}}</ion-button>
+</ion-footer>

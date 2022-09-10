@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Categories</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="order-container">
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6" *ngFor="let item of foodCategory;">
+                    <div class="order-item animate__animated animate__zoomIn">
+                        <div class="img-box center_img">
+                            <img src="assets/imgs/{{item.image}}" class="crop_img">
+                        </div>
+                        <h4>{{item.name}}</h4>
+                    </div>
+                </ion-col>
+
+                <!-- <ion-col size="6">
+              <div class="order-item animate__animated animate__zoomIn">
+                  <div class="img-box center_img">
+                    <img src="assets/imgs/f9.png" class="crop_img">
+                  </div>
+                  <h4>Fast Food</h4>
+                </div>
+          </ion-col>
+          <ion-col size="6">
+              <div class="order-item animate__animated animate__zoomIn">
+                  <div class="img-box center_img">
+                    <img src="assets/imgs/f3.png" class="crop_img">
+                  </div>
+                  <h4>Chiness</h4>
+                </div>
+          </ion-col>
+  
+            <ion-col size="6">
+                <div class="order-item animate__animated animate__zoomIn">
+                    <div class="img-box center_img">
+                      <img src="assets/imgs/f4.png" class="crop_img">
+                    </div>
+                    <h4>Indian Food</h4>
+                  </div>
+            </ion-col>
+            <ion-col size="6">
+                <div class="order-item animate__animated animate__zoomIn">
+                    <div class="img-box center_img">
+                      <img src="assets/imgs/f5.png" class="crop_img">
+                    </div>
+                    <h4>Italian Food</h4>
+                  </div>
+            </ion-col>
+    
+              <ion-col size="6">
+                  <div class="order-item animate__animated animate__zoomIn">
+                      <div class="img-box center_img">
+                        <img src="assets/imgs/f6.png" class="crop_img">
+                      </div>
+                      <h4>Fast Food</h4>
+                    </div>
+              </ion-col>
+              <ion-col size="6">
+                  <div class="order-item animate__animated animate__zoomIn">
+                      <div class="img-box center_img">
+                        <img src="assets/imgs/f7.png" class="crop_img">
+                      </div>
+                      <h4>South Indian</h4>
+                    </div>
+              </ion-col>
+      
+                <ion-col size="6">
+                    <div class="order-item animate__animated animate__zoomIn">
+                        <div class="img-box center_img">
+                          <img src="assets/imgs/f8.png" class="crop_img">
+                        </div>
+                        <h4>Fast Food</h4>
+                      </div>
+                </ion-col> -->
+            </ion-row>
+        </ion-grid>
+
+    </div>
+</ion-content>

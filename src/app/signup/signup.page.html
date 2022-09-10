@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <h2>{{'new_user' | translate}} <span>{{'register_now_to_continue' | translate}}</span></h2>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item class="animate__animated_no animate__slideInUp_no" lines="none">
+                <ion-label mode="md" position="floating">{{"full_name" | translate}}</ion-label>
+                <ion-input mode="md" type="name" [(ngModel)]="fullName"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="isFullName" class="error">Please enter full name</ion-label>
+
+            <ion-item class="animate__animated_no animate__slideInUp_no" lines="none">
+                <ion-label mode="md" position="floating">{{"email_address" | translate}}</ion-label>
+                <ion-input mode="md" type="email" [(ngModel)]="emailAddress"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="isEmailAddress" class="error">Please enter email address</ion-label>
+
+
+            <ion-item class="animate__animated_no animate__slideInUp_no" lines="none">
+                <ion-label mode="md" position="floating">{{"create_password" | translate}}</ion-label>
+                <ion-input mode="md" type="password" [(ngModel)]="createpassword"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="isCreatepassword" class="error">Please enter password</ion-label>
+
+
+            <ion-item class="animate__animated_no animate__slideInUp_no" lines="none">
+                <ion-label mode="md" position="floating">{{"confirm_password" | translate}}</ion-label>
+                <ion-input mode="md" type="password" [(ngModel)]="confirmPassword"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="isConfirmPassword" class="error">Please enter confirm password</ion-label>
+
+
+            <ion-item class="animate__animated_no animate__slideInUp_no" lines="none">
+                <ion-label mode="md" position="floating">{{"select_country" | translate}}</ion-label>
+                <ion-select cancelText="{{'cancel' | translate}}" okText="{{'done' | translate}}" [(ngModel)]="selectCountry">
+                    <!-- <ion-select-option value="Brazil">Brazil</ion-select-option> -->
+                    <ion-select-option value="India">India</ion-select-option>
+                    <!-- <ion-select-option value="Ireland">Ireland</ion-select-option>
+                    <ion-select-option value="Japan">Japan</ion-select-option>
+                    <ion-select-option value="Kenya">Kenya</ion-select-option>
+                    <ion-select-option value="Latvia">Latvia</ion-select-option>
+                    <ion-select-option value="Martinique">Martinique</ion-select-option>
+                    <ion-select-option value="Mexico">Mexico</ion-select-option>
+                    <ion-select-option value="Monaco">Monaco</ion-select-option>
+                    <ion-select-option value="Nepal">Nepal</ion-select-option> -->
+                </ion-select>
+            </ion-item>
+            <ion-label *ngIf="isSelectCountry" class="error">Please select country</ion-label>
+
+
+            <ion-item class="animate__animated animate__slideInUp" lines="none">
+                <ion-label mode="md" position="floating">{{"phone_number" | translate}}</ion-label>
+                <ion-input mode="md" type="number" [(ngModel)]="phoneNumber"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="isphoneNumber" class="error">Please enter phone number</ion-label>
+
+
+
+            <ion-button size="large" shape="block" class="btn animate__animated animate__slideInUp" (click)="sendPostRequest()">{{'register_now' | translate}}</ion-button>
+        </ion-list>
+    </div>
+    <p class="ion-text-center animate__animated animate__slideInUp">
+        {{'we_send_verfication_code_on_adove' | translate}}
+        <br> {{'given_number_to_verify' | translate}}
+    </p>
+</ion-content>

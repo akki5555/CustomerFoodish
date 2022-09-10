@@ -1,0 +1,72 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'amount_payable' | translate}}</ion-title>
+    </ion-toolbar>
+    <div class="banner">
+        <h1 class="ion-text-center animate__animated animate__zoomIn">₹ {{restaurantData.totalCost}}
+            <ion-icon class="zmdi zmdi-info-outline ion-text-end"></ion-icon>
+        </h1>
+    </div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <ion-list lines="none">
+        <h2>{{'how_you_like_to_pay_by' | translate}}</h2>
+        <ion-radio-group>
+            <ion-item class="animate__animated_no animate__slideInUp_no">
+                <div class="item_inner d-flex">
+                    <ion-radio value="cod" checked="true"></ion-radio>
+                    <ion-label class="d-flex">
+                        <h3>Cash on Delivery</h3>
+                        <img src="assets/imgs/cod.png" class="end" style="width: 53px;">
+                    </ion-label>
+                </div>
+            </ion-item>
+            <!-- <ion-item class="animate__animated_no animate__slideInUp_no">
+				<div class="item_inner d-flex">
+					<ion-radio value="wallet"></ion-radio>
+					<ion-label class="d-flex">
+						<h3>Foodish Wallet<span>($ 150.50)</span></h3>
+						<img src="assets/imgs/wallet.png" class="end" style="width: 25px;">
+					</ion-label>
+				</div>
+			</ion-item>
+			<ion-item class="animate__animated_no animate__slideInUp_no">
+				<div class="item_inner d-flex">
+					<ion-radio value="cd"></ion-radio>
+					<ion-label class="d-flex">
+						<h3>Credit/Debit Card</h3>
+						<img src="assets/imgs/card.png" class="end" style="width: 41px;">
+					</ion-label>
+				</div>
+			</ion-item>
+			<ion-item class="animate__animated_no animate__slideInUp_no">
+				<div class="item_inner d-flex">
+					<ion-radio value="paypal"></ion-radio>
+					<ion-label class="d-flex">
+						<h3>PayPal Money</h3>
+						<img src="assets/imgs/paypal.png" class="end" style="width: 71px;">
+					</ion-label>
+				</div>
+			</ion-item>
+			<ion-item class="animate__animated_no animate__slideInUp_no">
+				<div class="item_inner d-flex">
+					<ion-radio value="pay_u"></ion-radio>
+					<ion-label class="d-flex">
+						<h3>PaU Mobey</h3>
+						<img src="assets/imgs/pay_u.png" class="end" style="width: 89px;">
+					</ion-label>
+				</div>
+			</ion-item> -->
+        </ion-radio-group>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated_no animate__slideInUp_no">
+    <div class="confirm_order" (click)="updateOrderData()">
+        <h2 class="ion-text-center">{{"continue_order" | translate}}</h2>
+    </div>
+</ion-footer>

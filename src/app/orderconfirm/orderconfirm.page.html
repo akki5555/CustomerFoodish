@@ -1,0 +1,103 @@
+<!--
+<ion-header>
+	<ion-toolbar>
+		<ion-title>
+
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+-->
+
+<ion-content fullscreen class="bg_color_dark">
+	<div class="banner d-flex">
+		<ion-icon class="zmdi zmdi-check-circle"></ion-icon>
+		<div class="text">
+			<h1>{{"order_confirmed" | translate}}</h1>
+			<h6>Order Num FD12410 | June, 12:30 pm</h6>
+		</div>
+	</div>
+
+	<div class="slip-box">
+		<div class="top-border"></div>
+		<ion-card class="slip animate__animated_no animate__slideInDown_no">
+			<ion-card-content>
+				<div class="restro_details ion-text-center">
+					<h2 class="animate__animated animate__fadeInUp">Global China Restro</h2>
+					<p class="animate__animated animate__fadeInUp">Near City Garden, New York, USA </p>
+				</div>
+
+				<div class="items_details">
+					<ion-row class="animate__animated_no animate__fadeInDown_no">
+						<ion-col size="6">
+							<h4>{{"ordered_items" | translate}}</h4>
+						</ion-col>
+						<ion-col size="2" class="ion-text-center">
+							<h4>{{"qnt" | translate}}</h4>
+						</ion-col>
+						<ion-col size="4" class="ion-text-end">
+							<h4>{{"amount" | translate}}</h4>
+						</ion-col>
+					</ion-row>
+
+					<ion-row class="animate__animated_no animate__fadeInDown_no">
+						<ion-col size="6">
+							<h3>Dal Makhni</h3>
+						</ion-col>
+						<ion-col size="2" class="ion-text-center">
+							<h3><strong>1</strong></h3>
+						</ion-col>
+						<ion-col size="4" class="ion-text-end">
+							<h3><strong>$ 30.00</strong></h3>
+						</ion-col>
+					</ion-row>
+
+					<ion-row class="animate__animated_no animate__fadeInDown_no">
+						<ion-col size="6">
+							<h3>Red Thai Curry</h3>
+						</ion-col>
+						<ion-col size="2" class="ion-text-center">
+							<h3><strong>1</strong></h3>
+						</ion-col>
+						<ion-col size="4" class="ion-text-end">
+							<h3><strong>$ 45.00</strong></h3>
+						</ion-col>
+					</ion-row>
+				</div>
+
+				<div class="total">
+					<ion-row class="animate__animated_no animate__fadeInDown_no">
+						<ion-col size="8" class="ion-text-end">
+							<h4>{{"sub_total" | translate}}</h4>
+						</ion-col>
+						<ion-col size="4" class="ion-text-end">
+							<h3><strong>$ 75.00</strong></h3>
+						</ion-col>
+					</ion-row>
+					<ion-row class="animate__animated_no animate__fadeInDown_no">
+						<ion-col size="8" class="ion-text-end">
+							<h4>{{"service_fee" | translate}}</h4>
+						</ion-col>
+						<ion-col size="4" class="ion-text-end">
+							<h3><strong>$05.00</strong></h3>
+						</ion-col>
+					</ion-row>
+					<ion-row class="grend_total animate__animated_no animate__fadeInDown_no">
+						<ion-col size="8" class="ion-text-end">
+							<h3>{{"paid_via" | translate}} <strong>Credit Card</strong></h3>
+						</ion-col>
+						<ion-col size="4" class="ion-text-end">
+							<h5><strong>$ 80.00</strong></h5>
+						</ion-col>
+					</ion-row>
+				</div>
+				<p class="ion-text-center">{{"restro_message" | translate}}</p>
+			</ion-card-content>
+		</ion-card>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated_no animate__fadeInUp_no">
+	<div class="confirm_order" (click)="myorders()">
+		<h2 class="ion-text-center">{{"view_my_orders" | translate}}</h2>
+	</div>
+</ion-footer>

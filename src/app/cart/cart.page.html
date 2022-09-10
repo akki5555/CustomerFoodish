@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{"your_cart" | translate}}</ion-title>
+    </ion-toolbar>
+    <div class="restro_details">
+        <h2 class="animate__animated_no animate__slideInUp_no"> {{restaurantData.name}} </h2>
+        <p class="animate__animated_no animate__slideInUp_no">Near City Garden, New York, USA</p>
+    </div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <ion-list lines="none" *ngIf="cartInfo">
+        <ion-item class="animate__animated_no animate__slideInUp_no" *ngFor="let item of cartInfo; let index =index">
+            <div class="item_inner">
+                <div class="item_content">
+                    <div class="item_box d-flex">
+                        <div class="item_img center_img">
+                            <img src="assets/imgs/{{item.image}}" class="crop_img">
+                        </div>
+                        <div class="item_info">
+                            <h2 class="d-flex"> {{item.name}} </h2>
+                            <ion-row>
+                                <ion-col size="6">
+                                    <p>
+                                        <span>{{item.description}}</span>
+                                        <!-- <span>Extra Cheese</span> -->
+                                    </p>
+                                </ion-col>
+
+                                <ion-col size="6" class="d-flex">
+                                    <h4 class="end">
+                                        <span class="end add_remove_btn">
+											<small class="remove_icon">-</small>
+											<strong class="ion-text-center">{{item.food_quantity}}</strong>
+											<small class="add_icon">+</small>
+										</span> &nbsp;&nbsp;&nbsp;
+                                        <span class="item_price">
+											₹ {{item.food_price}}
+										</span>
+                                    </h4>
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-item>
+
+
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated_no animate__slideInUp_no">
+    <div class="details">
+        <h2 class="d-flex">{{"total_item_amount" | translate}} <span class="end">₹ {{totalCost}}</span></h2>
+        <h3 class="d-flex">{{"text" | translate}} <span class="end">₹ 5.00</span></h3>
+        <!-- <h4 class="d-flex">
+            <ion-icon class="zmdi zmdi-label ion-text-start"></ion-icon>{{"hav_promo" | translate}}
+        </h4> -->
+    </div>
+    <div class="confirm_order" (click)="delivery_info()">
+        <h2 class="d-flex">{{"proceed_to_confirm_order" | translate}} <span class="end">₹ {{totalCost + 5}}</span></h2>
+    </div>
+</ion-footer>

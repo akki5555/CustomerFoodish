@@ -1,0 +1,217 @@
+ion-header ion-toolbar ion-title {
+    font-size: 1.15rem;
+}
+
+.form {
+    width: 100%;
+    padding: 0 20px;
+    ion-list {
+        padding-top: 30px;
+        h2 {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 1.3rem;
+            padding-bottom: 20px;
+        }
+        ion-card {
+            background: none;
+            margin: 0;
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            padding-bottom: 25px;
+            p {
+                margin: 0;
+                color: var(--text-light2);
+                font-size: .75rem;
+                padding-top: 7px;
+                &.sub_text {
+                    padding-left: 34px;
+                    padding-top: 0;
+                }
+            }
+            .text_box {
+                width: 100%;
+            }
+            ion-icon {
+                font-size: 1.7rem;
+                line-height: 23px;
+                height: 15px;
+                min-width: 21px;
+                width: 21px;
+            }
+            ion-row {
+                margin: 0 -5px;
+                align-items: center !important;
+                ion-col {
+                    ion-item {
+                        margin: 0;
+                        border: none !important;
+                        .item_inner {
+                            width: 100%;
+                            align-items: flex-start;
+                        }
+                        ion-radio {
+                            margin: 0;
+                            min-width: 20px;
+                            margin-right: 13px;
+                            --color-checked: var(--primary);
+                            --checked: var(--text-light);
+                        }
+                        h3 {
+                            margin: 0;
+                            color: var(--text-light);
+                            font-size: .95rem;
+                            font-weight: 400;
+                            letter-spacing: .5px;
+                        }
+                        &.item-datetime {
+                            ion-datetime {
+                                padding: 0;
+                                --placeholder-color: var(--primary);
+                                color: var(--primary);
+                                display: flex;
+                                align-items: center;
+                                width: fit-content;
+                                font-size: .95rem;
+                                font-weight: 500;
+                                letter-spacing: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .custom_box {
+                padding-left: 34px;
+                padding-bottom: 6px;
+            }
+        }
+        .text_box {
+            // padding: 0 25px;
+            h2 {
+                margin: 0;
+                color: var(--text-light);
+                font-size: 1.3rem;
+                padding-bottom: 60px;
+                span {
+                    color: var(--primary);
+                    display: flex;
+                    align-items: center;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    ion-icon {
+                        font-size: 1.5rem;
+                        width: 15px;
+                        display: block;
+                        min-width: 15px;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+            .address_container {
+                width: 100%;
+                .address {
+                    margin-bottom: 23px;
+                    h3 {
+                        margin: 0;
+                        color: var(--text-light);
+                        font-size: 1rem;
+                        margin-bottom: 7px;
+                    }
+                    p {
+                        margin: 0;
+                        color: var(--text-light);
+                        font-size: 0.9rem;
+                        line-height: 19px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .confirm_order {
+            background: var(--primary);
+            padding: 16px 20px 16px 20px;
+            h2 {
+                margin: 0;
+                color: var(--white);
+                font-size: .95rem;
+                font-weight: 400;
+                .end {
+                    font-size: 1.15rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    background: var(--bg-color-secondary);
+    padding: 25px 0px;
+    padding-bottom: 0;
+    --animate-duration: .4s !important;
+    .text_box {
+        padding: 0 25px;
+        h2 {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 1.3rem;
+            padding-bottom: 25px;
+            span {
+                color: var(--primary);
+                display: flex;
+                align-items: center;
+                font-size: 1rem;
+                font-weight: 500;
+                ion-icon {
+                    font-size: 1.5rem;
+                    width: 15px;
+                    display: block;
+                    min-width: 15px;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+        }
+        .address_container {
+            width: 100%;
+            .address {
+                margin-bottom: 23px;
+                h3 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 1rem;
+                    margin-bottom: 7px;
+                }
+                p {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 0.9rem;
+                    line-height: 19px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .confirm_order {
+        background: var(--primary);
+        padding: 16px 20px 16px 20px;
+        h2 {
+            margin: 0;
+            color: var(--white);
+            font-size: .95rem;
+            font-weight: 400;
+            .end {
+                font-size: 1.15rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.condition-Color {
+    background-color: #f8a30e40;
+    padding: 10px;
+    border-radius: 15px;
+}

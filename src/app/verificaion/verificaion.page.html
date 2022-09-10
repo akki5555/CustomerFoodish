@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <h2>{{'verification_code' | translate}} <span>{{'verification_text' | translate}}</span></h2>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <div class="item_inner d-flex">
+                    <ion-input class="ion-text-center animate__animated_no animate__slideInUp_no" maxlength="1" mode="md" type="name" value="5"></ion-input>
+                    <ion-input class="ion-text-center animate__animated_no animate__slideInUp_no" maxlength="1" mode="md" type="name" value="8"></ion-input>
+                    <ion-input class="ion-text-center animate__animated_no animate__slideInUp_no" maxlength="1" mode="md" type="name" value="8"></ion-input>
+                    <ion-input class="ion-text-center animate__animated_no animate__slideInUp_no" maxlength="1" mode="md" type="name" value="7"></ion-input>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-button size="large" shape="block" class="btn animate__animated_no animate__slideInUp_no" (click)="location()">{{'vrify_now' | translate}}</ion-button>
+        <h2 class="d-flex animate__animated animate__slideInUp">0:48 min left <span class="end">{{'resend' | translate}}</span></h2>
+    </div>
+</ion-content>

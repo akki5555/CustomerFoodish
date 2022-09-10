@@ -1,0 +1,143 @@
+ion-header ion-toolbar ion-title {
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 15px !important;
+	font-size: 1.1rem;
+
+	.title_inner {
+		span {
+			&.center_title {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: calc(100% - 80px);
+				text-align: center;
+				margin: 0 auto;
+			}
+
+			&.end {
+				color: var(--primary);
+				z-index: 99;
+				position: relative;
+			}
+		}
+	}
+}
+
+ion-content {
+	--background: var(--bg-color-secondary) !important;
+}
+
+ion-list {
+	background: var(--transparent) !important;
+	margin: 0;
+	padding: 0;
+
+	ion-card {
+		background: var(--bg-color2);
+		border-radius: 0;
+		box-shadow: none;
+		margin: 0;
+		width: 100%;
+		padding: 30px 20px 40px 20px;
+		margin-bottom: 10px;
+		align-items: flex-start;
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		h2 {
+			margin: 0;
+			color: var(--text-light);
+			font-size: 1.1rem;
+			font-weight: 400;
+			letter-spacing: 0;
+			padding-bottom: 20px;
+
+			span {
+				color: var(--primary);
+				font-weight: 500;
+				font-size: 1rem;
+			}
+		}
+
+		h3 {
+			margin: 0;
+
+			ion-icon {
+				color: var(--primary);
+				font-size: 1.3rem;
+				min-width: 37px;
+			}
+		}
+
+		.form {
+			width: 100%;
+
+			ion-row {
+				ion-col {
+					padding: 0 5px;
+				}
+			}
+
+			ion-item {
+				margin-bottom: 27px;
+
+				ion-label {
+					color: var(--text-light2) !important;
+					font-weight: 400;
+				}
+				ion-input {
+					color: var(--text-light) !important;
+				}
+
+				&:last-child {
+					margin-bottom: 0 !important;
+				}
+			}
+		}
+
+		&.saved_address {
+			.form {
+				.address_container {
+					width: 100%;
+
+					.address {
+						margin-bottom: 23px;
+
+						h3 {
+							margin: 0;
+							color: var(--text-light2);
+							font-size: 1rem;
+							margin-bottom: 7px;
+
+							span {
+								color: var(--primary);
+							}
+						}
+
+						p {
+							margin: 0;
+							color: var(--text-light);
+							font-size: .85rem;
+							line-height: 22px;
+							font-weight: 400;
+							letter-spacing: .4px;
+						}
+
+						&:last-child { 
+							margin-bottom: 0;
+						}
+					}
+				}
+
+
+			}
+
+		}
+	}
+}
